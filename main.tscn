@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d267pg54y6g0o"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
+size = Vector2(10, 10)
+
+[node name="Main" type="Node3D" unique_id=917119085]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1587894101]
+transform = Transform3D(1, 0, 0, 0, 0.8166315, 0.5771595, 0, -0.5771595, 0.8166315, 0, 1.9914129, 1.8366182)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=723382086]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=727353552]
+mesh = SubResource("PlaneMesh_7dm0k")
