@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d267pg54y6g0o"]
 
 [ext_resource type="Script" uid="uid://s5ugrpk4rfw4" path="res://addons/cardboard_vr/scripts/cardboard_vr_camera.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bxrq6x57ltcnp" path="res://Untitled.blend" id="2_0xm2m"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
 size = Vector2(30, 30)
@@ -18,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8166315, 0.5771595, 0, -0.5771595, 0.81663
 mesh = SubResource("PlaneMesh_7dm0k")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1754769699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0097574, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0097574, 11.248599)
 
 [node name="CardboardVRCamera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1031342545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5826267, -0.7248962)
@@ -28,3 +29,23 @@ metadata/_custom_type_script = "uid://s5ugrpk4rfw4"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=58303735]
 mesh = SubResource("CapsuleMesh_0xm2m")
+
+[node name="objetos" type="Node" parent="." unique_id=447846611]
+
+[node name="Untitled" parent="objetos" unique_id=572958968 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.2680119, -0.52407837, 0, -36.716965)
+
+[node name="Untitled2" parent="objetos" unique_id=135484323 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.2680119, 22.656572, 0, -6.471671)
+
+[node name="Untitled3" parent="objetos" unique_id=1161257848 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.2680119, 11.361891, 0, -11.831814)
+
+[node name="Untitled4" parent="objetos" unique_id=1591851953 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.2680119, -26.986721, 0, 0.95684385)
+
+[node name="Untitled5" parent="objetos" unique_id=1478563263 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.2680119, -11.863983, 0, 1.1421909)
+
+[node name="Untitled6" parent="objetos" unique_id=2039057424 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.2680119, -11.863983, 0, -27.987303)
