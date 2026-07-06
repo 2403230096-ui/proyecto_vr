@@ -1,34 +1,48 @@
 [gd_scene format=3 uid="uid://d267pg54y6g0o"]
 
+[ext_resource type="Script" uid="uid://uogd5vae3aag" path="res://character_body_3d.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://s5ugrpk4rfw4" path="res://addons/cardboard_vr/scripts/cardboard_vr_camera.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bxrq6x57ltcnp" path="res://Untitled.blend" id="2_0xm2m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2yge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(30, 1, 30)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
 size = Vector2(30, 30)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0xm2m"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h2yge"]
+
 [node name="Main" type="Node3D" unique_id=917119085]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1587894101]
-transform = Transform3D(1, 0, 0, 0, 0.8166315, 0.5771595, 0, -0.5771595, 0.8166315, 0, 1.9914129, 1.8366182)
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1347621164]
+physics_material_override = SubResource("PhysicsMaterial_h2yge")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=723382086]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1433395232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4506793, 0)
+shape = SubResource("BoxShape3D_h2yge")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=727353552]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=727353552]
 mesh = SubResource("PlaneMesh_7dm0k")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1754769699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0097574, 11.248599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.214389, 11.248599)
+script = ExtResource("1_h2yge")
 
 [node name="CardboardVRCamera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1031342545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5826267, -0.7248962)
 script = ExtResource("1_ig7tw")
-UseGysroscope = false
 metadata/_custom_type_script = "uid://s5ugrpk4rfw4"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=58303735]
 mesh = SubResource("CapsuleMesh_0xm2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1715766341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08769941, 0)
+shape = SubResource("CapsuleShape3D_h2yge")
 
 [node name="objetos" type="Node" parent="." unique_id=447846611]
 
@@ -49,3 +63,8 @@ transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.268
 
 [node name="Untitled6" parent="objetos" unique_id=2039057424 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(-0.2680119, 0, -0.9634156, 0, 1, 0, 0.9634156, 0, -0.2680119, -11.863983, 0, -27.987303)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1587894101]
+transform = Transform3D(1, 0, 0, 0, 0.8166315, 0.5771595, 0, -0.5771595, 0.8166315, 0, 1.9914129, 1.8366182)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=723382086]
